@@ -1,0 +1,62 @@
+﻿@model SignUpViewModel
+@{
+    ViewData["Title"] = "Sign up";
+}
+
+<link rel="stylesheet" href="~/css/signUp.css" asp-append-version="true" />
+
+
+
+<section id="createAccount">
+    <div class="container">
+        <form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
+            <h1>Create Account</h1>
+            <p class="text-xs">Already have an acount? <a asp-controller="Auth" asp-action="SignIn">Sign in here.</a></p>
+
+            <div class="klientInfo">
+                <div class="klientbox">
+                    <label asp-for="FirstName"><b>First name</b></label>
+                    <span asp-validation-for="FirstName"></span>
+                    <input asp-for="FirstName" placeholder="Enter your first name">
+                </div>
+                <div class="klientbox">
+                    <label asp-for="LastName"><b>Last name</b></label>
+                    <span asp-validation-for="LastName"></span>
+                    <input asp-for="LastName" placeholder="Enter your last name">
+                </div>
+            </div>
+            <div class="createBox">
+                <label asp-for="Email"><b>Email address</b></label>
+                <span asp-validation-for="Email"></span>
+                <input asp-for="Email" placeholder="Enter your email address">
+            </div>
+            <div class="createBox">
+                <label asp-for="Password"><b>Password</b></label>
+                <span asp-validation-for="Password"></span>
+                <input asp-for="Password" placeholder="********">
+            </div>
+            <div class="createBox">
+                <label asp-for="ConfirmPassword"><b>Confirm Password</b></label>
+                <span asp-validation-for="ConfirmPassword"></span>
+                <input asp-for="ConfirmPassword" placeholder="********">
+            </div>
+
+            <div>
+                <input asp-for="TermsConditions" type="checkbox">
+                <label asp-for="TermsConditions" for="checkbox">I agree to the <a asp-controller="About" asp-action="Terms">Terms</a> & <a asp-controller="About" asp-action="Conditions">Conditions</a>.</label>
+
+            </div>
+            <span asp-validation-for="TermsConditions"></span>
+
+            <button class="btn-theme" type="submit">Sign Up</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+@await Html.PartialAsync("_validationScriptPartial")
+

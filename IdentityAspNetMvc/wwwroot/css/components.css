@@ -1,0 +1,389 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+html, body {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    margin:0;
+    padding:0;
+}
+/*------ TEXT ----------*/
+.text-xs {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px !important;
+}
+
+.text-s {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px !important;
+}
+
+.text-m {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px !important;
+}
+
+.text-lg {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px !important;
+}
+
+.text-xl {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px !important;
+}
+
+.text-lead {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 24px !important;
+}
+
+.d1 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 80px !important;
+}
+
+.d2 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 72px !important;
+}
+
+.d3 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 64px !important;
+}
+
+.d4 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 56px !important;
+}
+
+.d5 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 48px !important;
+}
+
+.d6 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 42px !important;
+}
+
+h1, .h1 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 40px !important;
+}
+
+h2, .h2 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 32px !important;
+}
+
+h3, .h3 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 28px !important;
+}
+
+h4, .h4 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 24px !important;
+}
+
+h5, .h5 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 20px !important;
+}
+
+h6, .h6 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 16px !important;
+}
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+a {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    color: #6366F1;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+/*------ Link ----------*/
+.menu-link {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    color: #33354D;
+    font-weight: 600 !important;
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+}
+
+    .menu-link:hover, .menu-link:active, .menu-link:focus,
+    .menu-link .active {
+        color: #6366F1;
+        text-decoration: none;
+    }
+
+/*------ BUTTONS----------*/
+
+.btn-theme {
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #6366F1;
+    color: #FFFFFF;
+    border: none;
+    text-decoration: none;
+}
+
+    .btn-theme:hover {
+        text-decoration: none;
+        background: #565973;
+        color: #FFFFFF;
+    }
+
+.btn-theme-s {
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0px 8px 18px -8px rgba(99, 102, 241, 0.9);
+    background: #6366F1;
+    color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 13px;
+}
+
+    .btn-theme-s:hover {
+        box-shadow: 0px 8px 18px -8px rgba(19, 16, 34, 0.15);
+        text-decoration: none;
+        background: #565973;
+        color: #FFFFFF;
+    }
+
+.btn-gray {
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #EFF2FC;
+    color: #33354D;
+    border: none;
+}
+
+    .btn-gray:hover {
+        text-decoration: none;
+        background: #565973;
+        color: #FFFFFF;
+    }
+
+.btn-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .btn-switch label {
+        line-height: 160%;
+        font-weight: 400;
+        color: #565973;
+        font-family: "Manrope", sans-serif;
+        font-size: 16px;
+        color: #33354D;
+        font-weight: 600 !important;
+    }
+
+    .btn-switch .switch {
+        position: relative;
+        display: inline-block;
+        width: 46px;
+        height: 25px;
+    }
+
+        .btn-switch .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+            .btn-switch .switch input:checked + .slider {
+                background-color: #6366F1;
+            }
+
+            .btn-switch .switch input:focus + .slider {
+                box-shadow: 0 0 1px #6366F1;
+            }
+
+            .btn-switch .switch input:checked + .slider:before {
+                transform: translateX(20px);
+                background-color: #FFFFFF;
+            }
+
+        .btn-switch .switch .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #565973;
+            transition: 0.4s;
+        }
+
+            .btn-switch .switch .slider:before {
+                position: absolute;
+                content: "";
+                height: 20px;
+                width: 20px;
+                left: 3px;
+                bottom: 2.7px;
+                background-color: #FFFFFF;
+                transition: 0.4s;
+            }
+
+            .btn-switch .switch .slider.round {
+                border-radius: 34px;
+            }
+
+                .btn-switch .switch .slider.round:before {
+                    border-radius: 50%;
+                }
+
+.btn-social {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 44px;
+    height: 44px;
+    background-color: #EFF2FC;
+    color: #33354D;
+}
+
+    .btn-social:hover {
+        text-decoration: none;
+        background: #565973;
+        color: #FFFFFF;
+    }
+
+.blue {
+    color: #6366F1;
+}
+
+.red {
+    color: red;
+}
+
+.gray {
+    color: rgb(215, 215, 215);
+}
