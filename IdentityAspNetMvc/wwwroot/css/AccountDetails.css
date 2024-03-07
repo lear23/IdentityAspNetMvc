@@ -1,0 +1,150 @@
+﻿.details .container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    gap: 30px;
+    border-right: 1px solid #d9d9d9;
+}
+
+@media(max-width: 792px) {
+    .profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 999;
+        display: none;
+    }
+
+        .profile.show {
+            display: flex;
+        }
+}
+/* @media(max-width:792px) {
+  .profile{
+    display: none; 
+    
+  }
+} */
+.profile .controllers {
+    display: flex;
+    flex-direction: column;
+    padding-right: 5px;
+    gap: 10px;
+}
+
+    .profile .controllers.show {
+        display: flex;
+    }
+
+.controllers a {
+    display: flex;
+    justify-content: flex-start;
+    background-color: transparent;
+    color: black;
+}
+
+    .controllers a:hover {
+        background-color: #6366F1;
+    }
+
+        .controllers a:hover img {
+            filter: brightness(0) invert(1);
+        }
+
+    .controllers a img.special-icon {
+        filter: none;
+    }
+
+    .controllers a:hover {
+        color: #ffffff;
+    }
+
+
+.infoDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+
+.create {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.klientInfo {
+    display: flex;
+    gap: 20px;
+}
+
+.klientDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+    .klientDetails input {
+        width: 100%;
+        border: 1px solid rgb(235, 235, 235);
+        border-radius: 8px;
+        padding: 8px 12px;
+        margin-bottom: 15px;
+    }
+
+.textOptional {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+    .textOptional textarea {
+        border: 1px solid rgb(235, 235, 235);
+        border-radius: 8px;
+        padding-left: 10px;
+    }
+
+.acountbutton {
+    display: flex;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .address input {
+        border: 1px solid rgb(235, 235, 235);
+        padding: 8px 12px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+.postalcode {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+
+    .postalcode input {
+        width: 100%;
+    }

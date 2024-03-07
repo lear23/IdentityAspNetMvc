@@ -1,0 +1,104 @@
+﻿
+@model AccountDetailsViewModel
+
+@{
+    ViewData["Title"] = "Account Details";
+}
+<link rel="stylesheet" href="~/css/AccountDetails.css" asp-append-version="true" />
+
+
+<section class="details">
+    <div class="container">
+
+        <div class="profile">
+            <a href=""><img src="~/Images/avatar.svg" alt="avatar"></a>
+            <h4>Isra Morales</h4>
+            <p>Lear23@domain.se</p>
+           
+            <nav class="controllers" ">
+                <a class="btn-theme"><img src="~/Images/bx-cog.svg" alt="">Account Details</a>
+                <a class="btn-theme"><img src="~/Images/bx-lock-alt.svg" alt="">Security</a>
+                <a class="btn-theme"><img src="~/Images/savedcourse.svg" alt="">Saved Courses</a>
+                <a class="btn-theme" asp-controller="Home" asp-action="Index"><img src="~/Images/bx-log-out.svg" alt="">Sign Out</a>
+
+            </nav>
+
+        </div>
+
+        <div class="infoDetails">
+            <a href=""><img src="images/userAvatar.svg" alt=""></a>
+            <form class="create" asp-controller="Account" asp-action="BasicInfo">
+                <h1>Account Details</h1>
+                <h5 class="colorTitle">Basic Info</h5>
+                <div class="klientInfo">
+                    <div class="klientDetails">
+                        <label asp-for="BasicInfo.LastName"><b>First name</b></label>
+                        <span asp-validation-for="BasicInfo.FirstName"></span>
+                        <input asp-for="BasicInfo.LastName" placeholder="Enter your first name">
+                    </div>
+                    <div class="klientDetails">
+                        <label asp-for="BasicInfo.LastName"><b>Last name</b></label>
+                        <span asp-validation-for="BasicInfo.LastName"></span>
+                        <input asp-for="BasicInfo.LastName" placeholder="Enter your last name">
+                    </div>
+
+                </div>
+                <div class="klientInfo">
+                    <div class="klientDetails">
+                        <label asp-for="BasicInfo.Email"><b>Email Address</b></label>
+                        <span asp-validation-for="BasicInfo.Email"></span>
+                        <input asp-for="BasicInfo.Email" placeholder="jhon.doe@domain.com">
+                    </div>
+                    <div class="klientDetails">
+                        <label asp-for="BasicInfo.Phone"><b>Phone</b></label>
+                        <span asp-validation-for="BasicInfo.Phone"></span>
+                        <input asp-for="BasicInfo.Phone" placeholder="Enter your phone">
+                    </div>
+                </div>
+
+                <div class="textOptional">
+                    <label asp-for="BasicInfo.Biography"><b>Bio</b>(optional)</label>
+
+                    <textarea cols="10" rows="2" placeholder="Add a short bio"></textarea>
+                </div>
+
+                <div class="acountbutton">
+                    <button class="btn-gray" type="reset">Cancel</button>
+                    <button class="btn-theme" type="submit">Save Changes</button>
+                </div>
+
+
+            </form>
+            <hr>
+            <form class="address" asp-controller="Account" asp-action="AddressModel">
+                <h5 class="colorTitle">Address</h5>
+
+                <label asp-for="AddressModel.Address1"><b>Address line 1</b></label>
+                <span asp-validation-for="AddressModel.Address1"></span>
+                <input asp-for="AddressModel.Address1" placeholder="Enter your address line">
+
+                <label asp-for="AddressModel.Address2"><b>Address line 2</b>(optional)</label>
+                <span asp-validation-for="AddressModel.Address2"></span>
+                <input asp-for="AddressModel.Address2" placeholder="Enter your address line">
+
+                <div class="postalcode">
+                    <div class="addresCity">
+                        <label asp-for="AddressModel.PostalCode"><b>Postal Code</b></label>
+                        <span asp-validation-for="AddressModel.PostalCode"></span>
+                        <input asp-for="AddressModel.PostalCode" placeholder="Enter your postal code">
+                    </div>
+                    <div class="addressCity">
+                        <label asp-for="AddressModel.City"><b>City</b></label>
+                        <span asp-validation-for="AddressModel.PostalCode"></span>
+                        <input asp-for="AddressModel.City" placeholder="Enter your city">
+                    </div>
+                </div>
+            </form>
+            <div class="acountbutton">
+                <button class="btn-gray">Cancel</button>
+                <button class="btn-theme">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+</section>

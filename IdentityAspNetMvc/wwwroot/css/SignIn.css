@@ -28,9 +28,14 @@ span {
     display:flex;
     color: red;
 }
-.errorEmail {
- 
-    color: red;
+.errorEmail { 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: #090909;
+    background-color:aliceblue;
+    padding:12px;
+    border-radius:8px;
 }
 .sigInForm button {
     width: 100%;

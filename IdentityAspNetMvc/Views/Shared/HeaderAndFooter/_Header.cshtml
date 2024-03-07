@@ -1,13 +1,24 @@
-﻿<header>
+﻿
+@inject SignInManager<UserEntity> _signInManager
+
+
+<header>
     <div class="container">
         <a id="logo" asp-controller="Home" asp-action="Home"><img src="@Url.Content("~/images/logoSilcicon.svg")" alt=""></a>
 
         <div id="menu">
-            <nav>
-                <a href="#showcase" class="menu-link">Overview</a>
-                <a href="#features" class="menu-link">Features</a>
+            <nav>             
                 @if (ViewContext.RouteData.Values["Controller"]!.ToString() != "Auth")
                 {
+                   
+                    <a asp-action="Home" asp-controller="Home" class="menu-link">Overview</a>
+                    <a asp-action="Home" asp-controller="Home" class="menu-link">Features</a>
+                    <a asp-controller="Home" asp-action="Contact" class="menu-link">Contact</a>
+                }
+                else
+                {
+                    <a asp-action="Home" asp-controller="Home" class="menu-link">Overview</a>
+                    <a asp-action="Home" asp-controller="Home" class="menu-link">Courses</a>
                     <a asp-controller="Home" asp-action="Contact" class="menu-link">Contact</a>
                 }
             </nav>
@@ -21,7 +32,6 @@
             </label>
             <label>Dark</label>
         </div>
-
         @if (ViewContext.RouteData.Values["Controller"]!.ToString() != "Auth")
         {
             <div class="account-buttons">
@@ -29,6 +39,11 @@
                 <a asp-controller="Auth" asp-action="SignUp" class="btn-theme"><i class="fa-regular fa-user"></i><span>Sign up</span></a>
             </div>
         }
+        else
+        {
+            <a asp-controller="Auth" asp-action="SignOut" class="btn-theme-s"><i class="fa-sharp fa-regular fa-arrow-right-from-bracket"></i><span style="color:#ffffff">Sign out</span></a>
+        }
+       
 
         <button id="abrir" class="open-menu">&#9776;</button>
         <nav class="btn-mobile" id="nav">
@@ -50,62 +65,13 @@
 </header>
 
 
-
-
-
-@* 
-
-<header>
-    <div class="container">
-        <a id="logo" href="@Url.Action("Home", "Home")"><img src="@Url.Content("~/images/logoSilcicon.svg")" alt=""></a> 
-
-        <div id="menu">
-            <nav>
-                <a href="#showcase" class="menu-link">Overview</a>
-                <a href="#features" class="menu-link">Features</a>             
-                @if (ViewContext.RouteData.Values["Controller"]!.ToString() != "Auth")
-                {
-                    <a href="@Url.Content("~/contact.html")" class="menu-link">Contact</a>
-                }
-            </nav>
-        </div>
-
-        <div class="btn-switch">
-            <label>Light</label>
-            <label for="switch-mode" class="switch">
-                <input type="checkbox" id="switch-mode" />
-                <span class="slider round"></span>
-            </label>
-            <label>Dark</label>
-        </div>
-        
-        @if (ViewContext.RouteData.Values["Controller"]!.ToString() != "Auth")
+@*    @if (_signInManager.IsSignedIn(User))
         {
-            <div class="account-buttons">
-                <a asp-controller="Auth" asp-action="SignIn" class="btn-gray"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a>
-                <a asp-controller="Auth" asp-action="SignUp" class="btn-theme"><i class="fa-regular fa-user"></i><span>Sign up</span></a>
-            </div>
+            <a asp-controller="Auth" asp-action="SignOut" class="btn-gray"><i class="fa-regular fa-left-from-bracket"></i><span>Sign out</span></a>
+
         }
-
-        <button id="abrir" class="open-menu">&#9776;</button>
-        <nav class="btn-mobile" id="nav">
-            <button class="close-menu" id="cerrar">X</button>
-            <ul class="nav-list">
-                <li><a href="#showcase" class="menu-link">Overview</a>></li>
-                <li><a href="#features" class="menu-link">Features</a> </li>
-                <li> @if (ViewContext.RouteData.Values["Controller"]!.ToString() != "Auth")
-                {
-                        <a href="@Url.Content("~/contact.html")" class="menu-link">Contact</a>
-                }
-                </li>
-                <li> <a asp-controller="Auth" asp-action="SignIn" class="btn-gray"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a></li>
-                <li><a asp-controller="Auth" asp-action="SignUp" class="btn-theme"><i class="fa-regular fa-user"></i><span>Sign up</span></a></li>
-            </ul>
-        </nav>
-       
-    
-    </div>
-</header> 
-
-
- *@
+        else
+        {
+            <a asp-controller="Auth" asp-action="SignIn" class="btn-gray"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a>
+            <a asp-controller="Auth" asp-action="SignUp" class="btn-theme"><i class="fa-regular fa-user"></i><span>Sign up</span></a>
+        } *@

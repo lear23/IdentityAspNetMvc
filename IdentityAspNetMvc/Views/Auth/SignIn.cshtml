@@ -1,0 +1,53 @@
+﻿@model SignInViewModel
+@{
+    ViewData["Title"] = "Sign in";
+}
+<link rel="stylesheet" href="~/css/SignIn.css" asp-append-version="true" />
+
+<section class="signIn">
+
+    <div class="container">
+        <form method="post" class="sigInForm" asp-controller="Auth" asp-action="SignIn" novalidate>
+
+            @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+            {
+                <div class="errorEmail">
+                    @ViewData["ErrorMessage"]
+                </div>
+            }
+            
+
+            <h1>Welcome Back</h1>
+            <p>Don’t have an account yet? <a asp-controller="Auth" asp-action="SignUp">Sign up here</a>.</p>
+
+            <div class="signin-box">
+                <label asp-for="Email"><b>Email</b></label>
+                <span asp-validation-for="Email"></span>
+                <input asp-for="Email" placeholder="Enter your email address">
+            </div>
+
+            <div class="signin-box">
+                <label asp-for="Password"><b>Password</b></label>
+                <span asp-validation-for="Password"></span>
+                <input asp-for="Password" placeholder="********">
+            </div>
+
+
+            <div>
+                <input asp-for="RememberMe" type="checkbox">
+                <label asp-for="RememberMe" for="checkbox">Remember Me</label>
+            </div>
+
+            <button class="btn-theme">Sign In</button>
+            <a class="forgot" asp-controller="Account" asp-action="Forgot">Forgot your password?</a>
+            <hr>
+            <h5><b>Or sign in with your social network</b></h5>
+            <div class="networkButtons">
+                <button class="btn-gray"><img src="images/bxl-google.svg" alt="">Google</button>
+                <button class="btn-gray"><img src="images/bxl-facebook.svg" alt="">Facebook</button>
+            </div>
+        </form>
+
+    </div>
+
+</section>
