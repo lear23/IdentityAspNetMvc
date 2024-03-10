@@ -4,7 +4,8 @@ namespace IdentityAspNetMvc.ViewModels.Account
 {
     public class AccountDetailsViewModel
     {
-        public BasicInfoViewModel BasicInfo { get; set; } = null!;
-        public AddressViewModel AddressModel { get; set; } = null!;
+        public ProfileInfoViewModel? ProfileInfo { get; set; }
+        public BasicInfoViewModel? BasicInfo { get; set; }
+        public AddressViewModel? AddressModel { get; set; } 
     }
 }

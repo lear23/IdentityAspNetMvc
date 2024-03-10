@@ -1,78 +1,130 @@
-﻿.details .container {
+﻿
+.details .container-profil {
     display: flex;
     flex-direction: row;
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
+@media(max-width: 792px) {
+    .details .container-profil {
+        flex-direction: column;
+        justify-content:center;
+        width:100%;
+    }
+}
+
 .profile {
     display: flex;
     flex-direction: column;
-    margin-right: 30px;
+    justify-content: start;
+    text-align:left;
+    margin-right: 30px;   
+    width:30%;
     gap: 30px;
     border-right: 1px solid #d9d9d9;
 }
 
 @media(max-width: 792px) {
     .profile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
+        border-right: none;
+        border-bottom: 1px solid #d9d9d9;
         width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.9);
-        z-index: 999;
-        display: none;
+        text-align: center;
+        margin-bottom: 30px;
+        margin-right: 0;
     }
-
-        .profile.show {
-            display: flex;
-        }
 }
-/* @media(max-width:792px) {
-  .profile{
-    display: none; 
-    
-  }
-} */
-.profile .controllers {
+.min-profil, a{
+    padding-left:12px;
+}
+
+.controllers {
     display: flex;
     flex-direction: column;
     padding-right: 5px;
     gap: 10px;
 }
 
-    .profile .controllers.show {
+@media(max-width:792px) {
+    .profile .controllers {
         display: flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
     }
+}
 
-.controllers a {
+
+.controllers .btn-trans {
     display: flex;
-    justify-content: flex-start;
+    align-items: center; 
     background-color: transparent;
+    padding: 8px 12px ;
+    border-radius: 8px;
     color: black;
 }
 
-    .controllers a:hover {
+    .controllers .btn-trans img {
+        margin-right: 8px; 
+    }
+
+    .controllers .btn-trans:hover {
         background-color: #6366F1;
     }
 
-        .controllers a:hover img {
+        .controllers .btn-trans:hover img {
             filter: brightness(0) invert(1);
         }
 
-    .controllers a img.special-icon {
-        filter: none;
-    }
-
-    .controllers a:hover {
+.controllers .btn-trans:hover {
         color: #ffffff;
+}
+
+
+@media only screen and (max-width: 972px) {
+    .controllers .btn-trans {
+        display: inline-flex; 
+        align-items: center;
+        background-color: transparent;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        transition: background-color 0.3s ease;
     }
 
+        .controllers .btn-trans img {
+            width: 30px; 
+            height: auto;
+            transition: filter 0.3s ease;
+        }
+
+        .controllers .btn-trans .btn-text {
+            display: none;
+            margin-left: 8px; 
+            transition: opacity 0.3s ease;
+        }
+
+        .controllers .btn-trans:hover {
+            background-color: #6366F1;
+        }
+
+            .controllers .btn-trans:hover img {
+                filter: brightness(0) invert(1);
+            }
+
+            .controllers .btn-trans:hover .btn-text {
+                display: inline-block; 
+                opacity: 1;
+            }
+}
+
+
+
+
+
+/* ----------------------- */
 
 .infoDetails {
     display: flex;
@@ -80,6 +132,13 @@
     width: 100%;
     gap: 30px;
 }
+
+@media(max-width:576px) {
+    .infoDetails {
+        padding: 20px 40px;
+    }
+}
+
 
 .create {
     display: block;
@@ -92,6 +151,12 @@
     gap: 20px;
 }
 
+@media(max-width:576px) {
+    .klientInfo {
+        flex-direction: column;
+    }
+}
+
 .klientDetails {
     display: flex;
     flex-direction: column;
@@ -100,6 +165,7 @@
     margin-bottom: 15px;
 }
 
+
     .klientDetails input {
         width: 100%;
         border: 1px solid rgb(235, 235, 235);
@@ -107,6 +173,7 @@
         padding: 8px 12px;
         margin-bottom: 15px;
     }
+
 
 .textOptional {
     display: flex;
@@ -119,7 +186,9 @@
         border-radius: 8px;
         padding-left: 10px;
     }
-
+form span{
+    color:red;
+}
 .acountbutton {
     display: flex;
     margin-top: 30px;

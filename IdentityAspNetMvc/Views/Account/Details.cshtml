@@ -2,39 +2,63 @@
 @model AccountDetailsViewModel
 
 @{
-    ViewData["Title"] = "Account Details";
+    ViewData["Title"] = $"{@Model.ProfileInfo.FirstName} {@Model.ProfileInfo.LastName}";
 }
 <link rel="stylesheet" href="~/css/AccountDetails.css" asp-append-version="true" />
 
 
-<section class="details">
-    <div class="container">
+<main class="details">
+    <section class="container container-profil">
 
-        <div class="profile">
-            <a href=""><img src="~/Images/avatar.svg" alt="avatar"></a>
-            <h4>Isra Morales</h4>
-            <p>Lear23@domain.se</p>
+        <aside class="profile">
            
-            <nav class="controllers" ">
-                <a class="btn-theme"><img src="~/Images/bx-cog.svg" alt="">Account Details</a>
-                <a class="btn-theme"><img src="~/Images/bx-lock-alt.svg" alt="">Security</a>
-                <a class="btn-theme"><img src="~/Images/savedcourse.svg" alt="">Saved Courses</a>
-                <a class="btn-theme" asp-controller="Home" asp-action="Index"><img src="~/Images/bx-log-out.svg" alt="">Sign Out</a>
-
+            <div class="min-profil">               
+                  <a href=""><img src="~/Images/avatar.svg" alt="avatar"></a>
+                    @* <a class="btn-White-circle" href="#"><i class="fa-regular fa-refresh"></i></a> *@
+               
+                <h3>@Model.ProfileInfo.FirstName @Model.ProfileInfo.LastName</h3>
+                <p>@Model.ProfileInfo.Email</p>
+            </div>         
+         
+            <nav class="controllers">
+                <a class="btn-trans" asp-controller="Details" asp-action="Account">
+                    <img src="~/Images/bx-cog.svg" alt="">
+                    <span class="btn-text">Account Details</span>
+                </a>
+                <a class="btn-trans" asp-controller="Security" asp-action="Account">
+                    <img src="~/Images/bx-lock-alt.svg" alt="">
+                    <span class="btn-text">Security</span>
+                </a>
+                <a class="btn-trans" asp-controller="SavedCourses" asp-action="Account">
+                    <img src="~/Images/savedcourse.svg" alt="">
+                    <span class="btn-text">Saved Courses</span>
+                </a>
+                <a class="btn-trans" asp-controller="Auth" asp-action="SignOut">
+                    <img src="~/Images/bx-log-out.svg" alt="">
+                    <span class="btn-text">Sign Out</span>
+                </a>
             </nav>
 
-        </div>
+
+        </aside>
 
         <div class="infoDetails">
-            <a href=""><img src="images/userAvatar.svg" alt=""></a>
-            <form class="create" asp-controller="Account" asp-action="BasicInfo">
+           @*  <a href=""><img src="images/userAvatar.svg" alt=""></a> *@
+            @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+            {
+                <div class="errorEmail">
+                    @ViewData["ErrorMessage"]
+                </div>
+            }
+
+            <form class="create" asp-controller="Account" asp-action="Details" novalidate>
                 <h1>Account Details</h1>
                 <h5 class="colorTitle">Basic Info</h5>
                 <div class="klientInfo">
                     <div class="klientDetails">
-                        <label asp-for="BasicInfo.LastName"><b>First name</b></label>
+                        <label asp-for="BasicInfo.FirstName"><b>First name</b></label>
                         <span asp-validation-for="BasicInfo.FirstName"></span>
-                        <input asp-for="BasicInfo.LastName" placeholder="Enter your first name">
+                        <input asp-for="BasicInfo.FirstName" placeholder="Enter your first name">
                     </div>
                     <div class="klientDetails">
                         <label asp-for="BasicInfo.LastName"><b>Last name</b></label>
@@ -63,21 +87,21 @@
                 </div>
 
                 <div class="acountbutton">
-                    <button class="btn-gray" type="reset">Cancel</button>
+                    <button  class="btn-gray" type="reset">Cancel</button>
                     <button class="btn-theme" type="submit">Save Changes</button>
                 </div>
 
 
             </form>
             <hr>
-            <form class="address" asp-controller="Account" asp-action="AddressModel">
+            <form class="address" asp-controller="Account" asp-action="Details" novalidate>
                 <h5 class="colorTitle">Address</h5>
 
                 <label asp-for="AddressModel.Address1"><b>Address line 1</b></label>
                 <span asp-validation-for="AddressModel.Address1"></span>
                 <input asp-for="AddressModel.Address1" placeholder="Enter your address line">
 
-                <label asp-for="AddressModel.Address2"><b>Address line 2</b>(optional)</label>
+                <label asp-for="AddressModel.Address2"><b>Address line 2</b> (optional)</label>
                 <span asp-validation-for="AddressModel.Address2"></span>
                 <input asp-for="AddressModel.Address2" placeholder="Enter your address line">
 
@@ -93,12 +117,13 @@
                         <input asp-for="AddressModel.City" placeholder="Enter your city">
                     </div>
                 </div>
+                <div class="acountbutton">
+                    <button id="btn-address-reset" type="reset" class="btn-gray">Cancel</button>
+                    <button id="btn-address-submit" type="submit" class="btn-theme">Save Changes</button>
+                </div>
             </form>
-            <div class="acountbutton">
-                <button class="btn-gray">Cancel</button>
-                <button class="btn-theme">Save Changes</button>
-            </div>
+          
         </div>
-    </div>
-
-</section>
+    </section>
+    
+</main>
