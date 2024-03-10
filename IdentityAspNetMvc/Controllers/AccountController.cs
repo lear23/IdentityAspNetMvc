@@ -51,7 +51,7 @@ public class AccountController(UserManager<UserEntity> userManager, AddressServi
                     user.LastName = viewModel.BasicInfo.LastName;
                     user.Email = viewModel.BasicInfo.Email;
                     user.PhoneNumber = viewModel.BasicInfo.Phone;
-                    user.Bio = viewModel.BasicInfo.Biography;
+                    user.Bio = viewModel.BasicInfo.Bio;
 
                     var result = await _userManager.UpdateAsync(user);
                     if (!result.Succeeded)
@@ -145,7 +145,7 @@ private async Task<ProfileInfoViewModel> PopulateProfilInfoAsync()
             LastName = user.LastName,
             Email = user.Email!,
             Phone = user.PhoneNumber,
-            Biography = user.Bio,
+            Bio= user.Bio
 
         };
         
@@ -175,75 +175,3 @@ private async Task<ProfileInfoViewModel> PopulateProfilInfoAsync()
 
 }
 
-
-
-//public class AccountController(UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager) : Controller
-//{
-//    private readonly UserManager<UserEntity> _userManager = userManager;
-//    private readonly SignInManager<UserEntity> _signInManager = signInManager;
-
-
-
-
-//    [HttpGet]
-//    [Route("/details")]
-//    public IActionResult Details()
-//    {
-//        var viewModel = new AccountDetailsViewModel();
-
-//        return View(viewModel);
-//    }
-
-//    [HttpPost]
-
-//    public IActionResult SaveBasicInfo(AccountDetailsViewModel viewModel)
-//    {
-//        if (TryValidateModel(viewModel.BasicInfo))
-//        {
-//            return RedirectToAction("Home", "Home");
-//        }
-
-//        return View("Details", viewModel);
-//    }
-
-//    [HttpPost]
-
-//    public IActionResult SaveAddressInfo(AccountDetailsViewModel viewModel)
-//    {
-//        if (TryValidateModel(viewModel.AddressModel))
-//        {
-//            return RedirectToAction("Home", "Home");
-//        }
-
-//        return View("Details", viewModel);
-//    }
-
-//}
-//#region  [HttpPost] SaveBasicInfo
-//[HttpPost]
-
-//public IActionResult SaveBasicInfo(AccountDetailsViewModel viewModel)
-//{
-//    if (TryValidateModel(viewModel.BasicInfo))
-//    {
-//        return RedirectToAction("Home", "Home");
-//    }
-
-//    return View("Details", viewModel);
-//}
-//#endregion
-
-//#region  [HttpPost] SaveAddressInfo
-
-//[HttpPost]
-
-//public IActionResult SaveAddressInfo(AccountDetailsViewModel viewModel)
-//{
-//    if (TryValidateModel(viewModel.AddressModel))
-//    {
-//        return RedirectToAction("Home", "Home");
-//    }
-
-//    return View("Details", viewModel);
-//}
-//#endregion

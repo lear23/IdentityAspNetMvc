@@ -30,6 +30,7 @@ namespace IdentityAspNetMvc.ViewModels.Account
 
         [Display(Name = "Bio (optional) ", Prompt = "Add a short bio... ", Order = 4)]
         [DataType(DataType.MultilineText)]
-        public string? Biography { get; set; }
+        public string? Bio { get; set; }
+
     }
 }
