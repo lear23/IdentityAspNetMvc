@@ -13,13 +13,13 @@
                    
                     <a asp-action="Home" asp-controller="Home" class="menu-link">Overview</a>
                     <a asp-action="Home" asp-controller="Home" class="menu-link">Features</a>
-                    <a asp-controller="Home" asp-action="Contact" class="menu-link">Contact</a>
+                    <a asp-controller="Contact" asp-action="Contact" class="menu-link">Contact</a>
                 }
                 else
                 {
                     <a asp-action="Home" asp-controller="Home" class="menu-link">Overview</a>
-                    <a asp-action="Home" asp-controller="Home" class="menu-link">Courses</a>
-                    <a asp-controller="Home" asp-action="Contact" class="menu-link">Contact</a>
+                    <a asp-action="Courses" asp-controller="Courses" class="menu-link">Courses</a>
+                    <a asp-controller="Contact" asp-action="Contact" class="menu-link">Contact</a>
                 }
             </nav>
         </div>
@@ -42,7 +42,8 @@
         else
         {
             <a asp-controller="Auth" asp-action="SignOut" class="btn-theme-s"><i class="fa-sharp fa-regular fa-arrow-right-from-bracket"></i><span style="color:#ffffff">Sign out</span></a>
-            
+
+           
         }
        
 

@@ -1,0 +1,136 @@
+﻿
+
+<link rel="stylesheet" href="~/css/ContactUs.css" asp-append-version="true" />
+
+<main class="container">
+    <section>
+        <div class="homeIcon">
+            <img src="images/homeIcon.svg" alt="">
+            <h6 class="gray">Home</h6>
+            <img src="images/rightArrow.svg" alt="">
+            <h6 class="blue">Courses</h6>
+        </div>
+    </section>
+
+    <section class="sectionContact">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+            <img src="images/email.svg" alt="">
+            <div class="emailUs">
+                <h5>Email Us</h5>
+                <p class="text-xs">Please feel free to drop us a line. We will respond as soon as possible.</p>
+                <a asp-controller="Contact" asp-action="LeaveMessage">Leave a message <img src="images/arrow.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="contacts">
+            <img src="images/careers.svg" alt="">
+            <div class="emailUs">
+                <h5>Careers</h5>
+                <p class="text-xs">Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
+                <a asp-controller="Careers" asp-action="SendApplication">Send an application <img src="~/Images/arrow.svg" alt=""></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="getContact">
+        <h3>Get In Contact With Us</h3>
+        <form asp-controller="Contact" asp-action="SendRequest" method="post">
+            <div class="contact-box">
+                <label for="FullName">Full name</label>
+                <input type="text" id="FullName" name="FullName" placeholder="Enter your full name" required>
+            </div>
+            <div class="contact-box">
+                <label for="EmailAddress">Email address</label>
+                <input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter your email address" required>
+            </div>
+            <div class="dropdown">
+                <label>Services</label>
+                <input class="dropbtn" id="Service" name="Service" placeholder="Choose the service you are interested in" required>
+                <div class="dropdown-content">
+                    <a href="#">CSS & CSS3: basic</a>
+                    <a href="#">Understanding APIs</a>
+                    <a href="#">C# and .NET to beginner</a>
+                </div>
+            </div>
+            <div class="contact-box">
+                <label for="Message">Message</label>
+                <textarea id="Message" name="Message" cols="10" rows="2" placeholder="Enter your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn-theme">Send Contact Request</button>
+        </form>
+    </section>
+</main>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.890630823849!2d18.031957977575072!3d59.334779774616955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d7c49b63229%3A0x7f1be5eb46ae60bf!2sKronobergsgatan%2033%2C%20112%2033%20Stockholm!5e0!3m2!1ssv!2sse!4v1709993750046!5m2!1ssv!2sse" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
+
+@* <main class="container">
+    <section>
+        <div class="homeIcon">
+            <img src="images/homeIcon.svg" alt="">
+            <h6 class="gray">Home</h6>
+            <img src="images/rightArrow.svg" alt="">
+            <h6 class="blue">Courses</h6>
+        </div>
+    </section>
+
+    <section class="sectionContact">
+        <h3>Contact Us</h3>
+        <div class="contacts">
+            <img src="images/email.svg" alt="">
+            <div class="emailUs">
+                <h5>Email Us</h5>
+                <p class="text-xs">Please feel free to drop us a line. We will respond as soon as possible.</p>
+                <a href="">Leave a messsage <img src="images/arrow.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="contacts">
+            <img src="images/careers.svg" alt="">
+            <div class="emailUs">
+                <h5>Careers</h5>
+                <p class="text-xs">Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
+                <a href="">Send an application <img src="images/arrow.svg" alt=""></a>
+            </div>
+        </div>
+
+    </section>
+    <section class="getContact">
+        <h3>Get In Contact With Us</h3>
+        <form action="post">
+            <div class="contact-box">
+                <label for="">Full name</label>
+                <input type="text" placeholder="Enter your full name">
+            </div>
+            <div class="contact-box">
+                <label for="">Email address</label>
+                <input type="text" placeholder="Enter your email address">
+            </div>
+            <div class="dropdown">
+                <input class="dropbtn" placeholder="Choose the service you are interested in"></input>
+                <div class="dropdown-content">
+                    <a href="#">CSS & CSS3: basic</a>
+                    <a href="#">Understanding APIs</a>
+                    <a href="#">C# and .NET to beginner</a>
+                </div>
+            </div>
+            <!-- <div class="contact-box">
+                <label for="">Service</label>
+                <input type="text" placeholder="Choose the service you are interested in">
+            </div> -->
+            <div class="contact-box">
+                <label for="">Message</label>
+                <textarea cols="10" rows="2" placeholder="Enter your message here..."></textarea>
+            </div>
+
+            <button class="btn-theme">Send Contact Request</button>
+        </form>
+
+    </section>
+
+
+</main>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.890630823849!2d18.031957977575072!3d59.334779774616955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d7c49b63229%3A0x7f1be5eb46ae60bf!2sKronobergsgatan%2033%2C%20112%2033%20Stockholm!5e0!3m2!1ssv!2sse!4v1709993750046!5m2!1ssv!2sse" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ *@

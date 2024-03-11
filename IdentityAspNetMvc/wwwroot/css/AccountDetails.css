@@ -99,6 +99,11 @@
             height: auto;
             transition: filter 0.3s ease;
         }
+        .controllers .btn-trans .bookmark {
+            width: 20px;
+            height: auto;
+            transition: filter 0.3s ease;
+        }
 
         .controllers .btn-trans .btn-text {
             display: none;

@@ -1,0 +1,175 @@
+﻿
+
+.coursesList .container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.homeIcon {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0;
+    padding: 20px 0px;
+    gap: 10px;
+}
+
+    .homeIcon img {
+        padding-bottom: 10px;
+    }
+
+.courses {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .courses {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+}
+
+.courses input {
+    margin-left: 20px;
+    border: 1px solid #cecccc;
+    border-radius: 8px;
+    padding: 8px 32px;
+}
+
+@media (max-width: 792px) {
+    .courses input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
+
+.container-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+@media (max-width: 1400px) {
+    .container-cards {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .cardCourses .cardImage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 997px) {
+    .container-cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .cardCourses .cardImage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.cardCourses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid #cdcbcb;
+    border-radius: 8px;
+    z-index: 0;
+}
+
+    .cardCourses .cardImage {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+.courseIcon {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}
+
+.bestSeller {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+
+.cardText {
+    padding: 20px;
+}
+
+.watch {
+    display: flex;
+    gap: 40px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.workwithUs {
+    background-color: #eff0fc;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 70px;
+    padding: 60px 120px;   
+    border-radius: 8px;
+}
+.workwithUs .work1{
+    display:flex;
+    flex-direction:column;
+    justify-content:center; 
+    padding-left:80px;
+    text-align:left;
+}
+    .workwithUs button {
+        display: inline-flex;
+        margin-top: 40px;
+        width:200px;
+        
+    }
+
+    @media (max-width: 997px) {
+        .workwithUs {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap:80px;
+    }
+
+        .workwithUs button {
+            margin-top: 40px;
+            display: inline-flex;
+        }
+}
