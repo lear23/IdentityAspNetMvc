@@ -376,6 +376,30 @@ a {
         color: #FFFFFF;
     }
 
+.btn-delete {
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    padding: 4px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    color: #f92a0a;
+    border: 1px solid #f98b7a;
+}
+
+    .btn-delete:hover {
+        text-decoration: none;
+        background: #f92a0a;
+        color: #FFFFFF;
+    }
+
+        .btn-delete:hover img {
+            filter: invert(100%);
+        }
+
 .blue {
     color: #6366F1;
 }

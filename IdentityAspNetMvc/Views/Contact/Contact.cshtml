@@ -1,4 +1,6 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Course";
+}
 
 <link rel="stylesheet" href="~/css/ContactUs.css" asp-append-version="true" />
 
@@ -7,27 +9,27 @@
         <div class="homeIcon">
             <img src="images/homeIcon.svg" alt="">
             <h6 class="gray">Home</h6>
-            <img src="images/rightArrow.svg" alt="">
+            <img src="~/Images/rightArrow.svg" alt="">
             <h6 class="blue">Courses</h6>
         </div>
     </section>
 
     <section class="sectionContact">
         <h3>Contact Us</h3>
-        <div class="contacts">
-            <img src="images/email.svg" alt="">
+        <div class="contacts">            
+            <img src="~/Images/email.svg" alt="">
             <div class="emailUs">
                 <h5>Email Us</h5>
                 <p class="text-xs">Please feel free to drop us a line. We will respond as soon as possible.</p>
-                <a asp-controller="Contact" asp-action="LeaveMessage">Leave a message <img src="images/arrow.svg" alt=""></a>
+                <a asp-controller="Contact" asp-action="LeaveMessage">Leave a message <img src="~/Images/arroeblue.svg" alt=""></a>
             </div>
         </div>
         <div class="contacts">
-            <img src="images/careers.svg" alt="">
+            <img src="/Images/careers.svg" alt="">
             <div class="emailUs">
                 <h5>Careers</h5>
                 <p class="text-xs">Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
-                <a asp-controller="Careers" asp-action="SendApplication">Send an application <img src="~/Images/arrow.svg" alt=""></a>
+                <a asp-controller="Careers" asp-action="SendApplication">Send an application <img src="~/Images/arroeblue.svg" alt=""></a>
             </div>
         </div>
     </section>
