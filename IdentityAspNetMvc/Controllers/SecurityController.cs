@@ -8,14 +8,12 @@ using Microsoft.AspNetCore.Authorization;
 namespace IdentityAspNetMvc.Controllers
 {
     [Authorize]
-    public class SecurityController : Controller
+    public class SecurityController(UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager) : Controller
     {
-        private readonly UserManager<UserEntity> _userManager;
+        private readonly UserManager<UserEntity> _userManager = userManager;
+        private readonly SignInManager<UserEntity> _signInManager = signInManager;
 
-        public SecurityController(UserManager<UserEntity> userManager)
-        {
-            _userManager = userManager;
-        }
+
 
         [HttpGet]
         [Route("/Security")]
@@ -24,7 +22,7 @@ namespace IdentityAspNetMvc.Controllers
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return RedirectToAction("Login", "Account"); // Redirige a la página de inicio de sesión si el usuario no está autenticado
+                return RedirectToAction("Login", "Account");
             }
 
             var viewModel = new AccountDetailsViewModel
@@ -38,44 +36,128 @@ namespace IdentityAspNetMvc.Controllers
             };
 
             return View(viewModel);
+            
+        }
+
+
+        [HttpPost]
+        [Route("/Security")]
+        public async Task<IActionResult> Security(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(User);
+                if (user == null)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+
+                var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+                if (!result.Succeeded)
+                {
+
+
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View();
+                }
+                await _signInManager.RefreshSignInAsync(user);
+                return View(model);
+
+            }
+
+
+            return View("SecurityConfirmation");
         }
 
         //[HttpPost]
         //[Route("/Security")]
         //public async Task<IActionResult> Security(ChangePasswordViewModel model)
         //{
-        //    if (!ModelState.IsValid)
+        //    if (string.IsNullOrEmpty(model.OldPassword))
         //    {
-        //        return View(model);
+
+        //        ViewData["ErrorMessage"] = "Current password is required.";
+        //        return View();
         //    }
 
         //    var user = await _userManager.GetUserAsync(User);
         //    if (user == null)
         //    {
-        //        return RedirectToAction("Login", "Account"); // Redirige a la página de inicio de sesión si el usuario no está autenticado
+
+        //        return RedirectToAction("Login", "Account");
         //    }
 
         //    var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
         //    if (result.Succeeded)
         //    {
-        //        // La contraseña se cambió con éxito, puedes redirigir a una página de éxito o a la misma página con un mensaje de éxito
-        //        return RedirectToAction("Security"); // Redirige a la vista de seguridad con un mensaje de éxito si lo deseas
+
+        //        return RedirectToAction("Security"); 
         //    }
         //    else
         //    {
-        //        // Si la actualización de la contraseña falla, agregamos los errores al ModelState para mostrarlos en la vista
-        //        foreach (var error in result.Errors)
-        //        {
-        //            ModelState.AddModelError(string.Empty, error.Description);
-        //        }
-        //        return View(model);
+
+        //        ViewData["ErrorMessage"] = "Failed to change password.";
+        //        return View();
         //    }
         //}
 
     }
 }
 
+//[HttpPost]
+//public async Task<IActionResult> Security(ChangePasswordViewModel model)
+//{
+//    if (ModelState.IsValid)
+//    {
+//        // Buscar el usuario
+//        var user = await _userManager.FindByNameAsync(User.);
 
+//        if (user != null)
+//        {
+//            // Verificar que la contraseña actual no sea nula
+//            if (model.OldPassword != null)
+//            {
+//                // Cambiar la contraseña
+//                var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+//                if (result.Succeeded)
+//                {
+//                    // Manejar éxito
+//                    return RedirectToAction("Index", "Home"); // Por ejemplo, redirecciona a la página de inicio
+//                }
+//                else
+//                {
+//                    // Manejar fallo
+//                    foreach (var error in result.Errors)
+//                    {
+//                        ModelState.AddModelError(string.Empty, error.Description);
+//                    }
+//                    return View(model);
+//                }
+//            }
+//            else
+//            {
+//                // Manejar contraseña actual nula
+//                ModelState.AddModelError(string.Empty, "La contraseña actual no puede ser nula.");
+//                return View(model);
+//            }
+//        }
+//        else
+//        {
+//            // Manejar usuario no encontrado
+//            ModelState.AddModelError(string.Empty, "Usuario no encontrado.");
+//            return View(model);
+//        }
+//    }
+//    else
+//    {
+//        // Manejar modelo no válido
+//        return View(model);
+//    }
+
+//}
 
 
 

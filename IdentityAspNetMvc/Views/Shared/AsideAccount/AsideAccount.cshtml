@@ -1,4 +1,8 @@
-﻿
+﻿@model AccountDetailsViewModel
+
+@{
+    ViewData["Title"] = $"{@Model.ProfileInfo.FirstName} {@Model.ProfileInfo.LastName}";
+}
 <link rel="stylesheet" href="~/css/AccountDetails.css" asp-append-version="true" />
 
     <aside class="profile">

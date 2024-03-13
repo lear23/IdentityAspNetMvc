@@ -2,9 +2,9 @@
 
 @model AccountDetailsViewModel
 
-@{
+@* @{
     ViewData["Title"] = $"{@Model.ProfileInfo.FirstName} {@Model.ProfileInfo.LastName}";
-}
+} *@
 <link rel="stylesheet" href="~/css/Security.css" asp-append-version="true" />
 <section class="details">
     <div class="container container-profil">
@@ -18,19 +18,19 @@
                 <form asp-action="Security" method="post">
                     <div class="clientInfo">
                         <div class="oldPassword">
-                            <label><b>Current Password</b></label>
+                            <label asp-for="ChangePassword.OldPassword"><b>Current Password</b></label>
                             <input asp-for="ChangePassword.OldPassword" type="password" placeholder="Enter current password">
                             <span asp-validation-for="ChangePassword.OldPassword" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="clientInfo">
                         <div class="clienSecurity">
-                            <label><b>New Password</b></label>
+                            <label asp-for="ChangePassword.NewPassword"><b>New Password</b></label>
                             <input asp-for="ChangePassword.NewPassword" type="password" placeholder="Enter new password">
                             <span asp-validation-for="ChangePassword.NewPassword" class="text-danger"></span>
                         </div>
                         <div class="clienSecurity">
-                            <label><b>Confirm New Password</b></label>
+                            <label asp-for="ChangePassword.ConfirmNewPassword"><b>Confirm New Password</b></label>
                             <input asp-for="ChangePassword.ConfirmNewPassword" type="password" placeholder="Confirm new password">
                             <span asp-validation-for="ChangePassword.ConfirmNewPassword" class="text-danger"></span>
                         </div>
@@ -51,9 +51,10 @@
                     <label for="checkbox">I agree to the <a href="#">Terms</a> & <a href="#">Conditions</a></label>
                 </div>
             </div>
-
-            
+            <div >
                 <button class="btn-delete">Delete</button>
+            </div>
+            
             
         </div>
     </div>
@@ -61,31 +62,3 @@
 </section>
 
 
-
-
-@*   <div class="createNewSecurity">
-                <h1>Security</h1>
-                <h5 class="colorTitle">Basic Info</h5>
-                <div class="klientInfo">
-                    <div class="oldPassword">
-                        <label><b>Current password</b></label>
-                        <input type="text" placeholder="*******">
-                    </div>
-
-                </div>
-                <div class="clientInfo">
-                    <div class="clienSecurity">
-                        <label><b>New password</b></label>
-                        <input type="password" placeholder="*******">
-                    </div>
-                    <div class="clienSecurity">
-                        <label><b>Confirm new password</b></label>
-                        <input type="password" placeholder="*******">
-                    </div>
-                </div>
-
-                <div class="acountbutton">
-                    <button class="btn-gray">Cancel</button>
-                    <button class="btn-theme">Save Changes</button>
-                </div>
-            </div> *@
