@@ -1,0 +1,60 @@
+﻿
+.container .saved {
+    display: flex;
+    flex-direction: row;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    gap: 80px;
+}
+
+
+.deleteAll {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.chosen-courses {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    justify-content: center;
+    gap: 30px;
+}
+
+.courses-cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid #cdcbcb;
+    border-radius: 8px;
+    z-index: 0;
+}
+
+    .courses-cards .cardImage {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+.courseIcon {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}
+
+.bestSeller {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+
+.cardText {
+    padding: 20px;
+}
+
+.watch {
+    display: flex;
+    gap: 40px;
+}

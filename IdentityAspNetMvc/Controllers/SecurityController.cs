@@ -40,69 +40,68 @@ namespace IdentityAspNetMvc.Controllers
         }
 
 
-        [HttpPost]
-        [Route("/Security")]
-        public async Task<IActionResult> Security(ChangePasswordViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = await _userManager.GetUserAsync(User);
-                if (user == null)
-                {
-                    return RedirectToAction("Login", "Account");
-                }
-
-                var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
-                if (!result.Succeeded)
-                {
-
-
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.Description);
-                    }
-                    return View();
-                }
-                await _signInManager.RefreshSignInAsync(user);
-                return View(model);
-
-            }
-
-
-            return View("SecurityConfirmation");
-        }
-
         //[HttpPost]
         //[Route("/Security")]
         //public async Task<IActionResult> Security(ChangePasswordViewModel model)
         //{
-        //    if (string.IsNullOrEmpty(model.OldPassword))
+        //    if (ModelState.IsValid)
         //    {
+        //        var user = await _userManager.GetUserAsync(User);
+        //        if (user == null)
+        //        {
+        //            return RedirectToAction("Login", "Account");
+        //        }
 
-        //        ViewData["ErrorMessage"] = "Current password is required.";
-        //        return View();
+        //        var result = await _userManager.ChangePasswordAsync(user, model.OldPassword!, model.NewPassword!);
+        //        if (!result.Succeeded)
+        //        {
+
+
+        //            foreach (var error in result.Errors)
+        //            {
+        //                ModelState.AddModelError(string.Empty, error.Description);
+        //            }
+        //            return View();
+        //        }
+        //        await _signInManager.RefreshSignInAsync(user);
+        //        return View(model);
+
         //    }
 
-        //    var user = await _userManager.GetUserAsync(User);
-        //    if (user == null)
-        //    {
 
-        //        return RedirectToAction("Login", "Account");
-        //    }
-
-        //    var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
-        //    if (result.Succeeded)
-        //    {
-
-        //        return RedirectToAction("Security"); 
-        //    }
-        //    else
-        //    {
-
-        //        ViewData["ErrorMessage"] = "Failed to change password.";
-        //        return View();
-        //    }
+        //    return View("SecurityConfirmation");
         //}
+
+        [HttpPost]
+        [Route("/Security")]
+        public async Task<IActionResult> Security(ChangePasswordViewModel model)
+        {
+            if (string.IsNullOrEmpty(model.OldPassword))
+            {
+                ViewData["ErrorMessage"] = "Current password is required.";
+                return View();
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+            if (result.Succeeded)
+            {
+                // Redirigir a la vista SecurityConfirmation si el cambio de contraseña tiene éxito
+                return View("SecurityConfirmation");
+            }
+            else
+            {
+                // Si falla, establecer un mensaje de error y volver a mostrar la vista
+                ViewData["ErrorMessage"] = "Failed to change password.";
+                return View();
+            }
+        }
+
 
     }
 }

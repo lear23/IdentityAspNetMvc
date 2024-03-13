@@ -19,19 +19,19 @@
                     <div class="clientInfo">
                         <div class="oldPassword">
                             <label asp-for="ChangePassword.OldPassword"><b>Current Password</b></label>
-                            <input asp-for="ChangePassword.OldPassword" type="password" placeholder="Enter current password">
+                            <input asp-for="ChangePassword.OldPassword" type="password" placeholder="Enter current password" name="ChangePassword.OldPassword">
                             <span asp-validation-for="ChangePassword.OldPassword" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="clientInfo">
                         <div class="clienSecurity">
                             <label asp-for="ChangePassword.NewPassword"><b>New Password</b></label>
-                            <input asp-for="ChangePassword.NewPassword" type="password" placeholder="Enter new password">
+                            <input asp-for="ChangePassword.NewPassword" type="password" placeholder="Enter new password" name="ChangePassword.NewPassword">
                             <span asp-validation-for="ChangePassword.NewPassword" class="text-danger"></span>
                         </div>
                         <div class="clienSecurity">
                             <label asp-for="ChangePassword.ConfirmNewPassword"><b>Confirm New Password</b></label>
-                            <input asp-for="ChangePassword.ConfirmNewPassword" type="password" placeholder="Confirm new password">
+                            <input asp-for="ChangePassword.ConfirmNewPassword" type="password" placeholder="Confirm new password" name="ChangePassword.ConfirmNewPassword">
                             <span asp-validation-for="ChangePassword.ConfirmNewPassword" class="text-danger"></span>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 ﻿@model AccountDetailsViewModel
 
+
 @{
     ViewData["Title"] = $"{@Model.ProfileInfo.FirstName} {@Model.ProfileInfo.LastName}";
 }
@@ -9,16 +10,13 @@
 
         <div class="min-profil">
             <a href=""><img src="~/Images/avatar.svg" alt="avatar"></a>
-            @* <a class="btn-White-circle" href="#"><i class="fa-regular fa-refresh"></i></a> *@
+   
         @if (Model != null && Model!.ProfileInfo != null)
         {
             <h3>@Model!.ProfileInfo.FirstName @Model.ProfileInfo.LastName</h3>
             <p>@Model.ProfileInfo.Email</p>
         }
 
-
-           @*  <h3>@Model.ProfileInfo.FirstName @Model.ProfileInfo.LastName</h3>
-            <p>@Model.ProfileInfo.Email</p> *@
         </div>
 
         <nav class="controllers">
@@ -30,7 +28,7 @@
                 <img src="~/Images/bx-lock-alt.svg" alt="">
                 <span class="btn-text">Security</span>
             </a>
-            <a class="btn-trans" asp-controller="SavedCourses" asp-action="Account">
+            <a class="btn-trans" asp-controller="SavedCourses" asp-action="Courses">
                 <img class="bookmark" src="~/Images/savedcourse.svg" alt="">
                 <span class="btn-text">Saved Courses</span>
             </a>
