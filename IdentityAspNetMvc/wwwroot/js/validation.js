@@ -18,6 +18,7 @@ const formErrorMessage = (element, validationResult) => {
 }
 
 
+
 const compareValidator = (value, compareValue) => {
     if (value === compareValue) {
         return true

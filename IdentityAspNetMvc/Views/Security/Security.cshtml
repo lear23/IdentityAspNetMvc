@@ -1,38 +1,75 @@
-﻿
-
-@model AccountDetailsViewModel
+﻿@model IdentityAspNetMvc.ViewModels.Account.AccountSecurityViewModel
 
 @{
     ViewData["Title"] = "Security";
 }
 <link rel="stylesheet" href="~/css/Security.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/AccountDetails.css" asp-append-version="true" />
 <section class="details">
     <div class="container container-profil">
 
-        <partial name="~/Views/Shared/AsideAccount/AsideAccount.cshtml" />
+       @*  <partial name="~/Views/Shared/AsideAccount/AsideAccount.cshtml" model="@Model.ProfileInfo"  />  *@
+      
+
+        <aside class="profile">
+
+            <div class="min-profil">
+                <a href=""><img src="~/Images/avatar.svg" alt="avatar"></a>
+
+                @if (Model != null && Model!.ProfileInfo != null)
+                {
+                    <h3>@Model!.ProfileInfo.FirstName @Model.ProfileInfo.LastName</h3>
+                    <p>@Model.ProfileInfo.Email</p>
+                }
+
+            </div>
+
+            <nav class="controllers">
+                <a class="btn-trans" asp-controller="Account" asp-action="Details">
+                    <img src="~/Images/bx-cog.svg" alt="">
+                    <span class="btn-text">Account Details</span>
+                </a>
+
+                <a class="btn-trans" asp-controller="Security" asp-action="Security">
+                    <img src="~/Images/bx-lock-alt.svg" alt="">
+                    <span class="btn-text">Security</span>
+                </a>
+                <a class="btn-trans" asp-controller="SavedCourses" asp-action="Courses">
+                    <img class="bookmark" src="~/Images/savedcourse.svg" alt="">
+                    <span class="btn-text">Saved Courses</span>
+                </a>
+                <a class="btn-trans" asp-controller="Auth" asp-action="SignOut">
+                    <img src="~/Images/bx-log-out.svg" alt="">
+                    <span class="btn-text">Sign Out</span>
+                </a>
+            </nav>
+
+
+        </aside> 
 
         <div class="infoDetails">
             <div class="createNewSecurity">
                 <h1>Security</h1>
                 <h5 class="colorTitle">Change Password</h5>
-                <form asp-action="Security" method="post">
+                <form method="post">
                     <div class="clientInfo">
                         <div class="oldPassword">
-                            <label asp-for="ChangePassword.OldPassword"><b>Current Password</b></label>
-                            <input asp-for="ChangePassword.OldPassword" type="password" placeholder="Enter current password" name="ChangePassword.OldPassword">
-                            <span asp-validation-for="ChangePassword.OldPassword" class="text-danger"></span>
+                            <label asp-for="OldPassword"><b>Current Password</b></label>
+                            <input asp-for="OldPassword" type="password" placeholder="Enter current password" name="OldPassword">
+                            <span asp-validation-for="OldPassword" class="text-danger"></span>
                         </div>
-                    </div>
+                    </div>                 
+
                     <div class="clientInfo">
                         <div class="clienSecurity">
-                            <label asp-for="ChangePassword.NewPassword"><b>New Password</b></label>
-                            <input asp-for="ChangePassword.NewPassword" type="password" placeholder="Enter new password" name="ChangePassword.NewPassword">
-                            <span asp-validation-for="ChangePassword.NewPassword" class="text-danger"></span>
+                            <label asp-for="NewPassword"><b>New Password</b></label>
+                            <input asp-for="NewPassword" type="password" placeholder="Enter new password" name="NewPassword">
+                            <span asp-validation-for="NewPassword" class="text-danger"></span>
                         </div>
                         <div class="clienSecurity">
-                            <label asp-for="ChangePassword.ConfirmNewPassword"><b>Confirm New Password</b></label>
-                            <input asp-for="ChangePassword.ConfirmNewPassword" type="password" placeholder="Confirm new password" name="ChangePassword.ConfirmNewPassword">
-                            <span asp-validation-for="ChangePassword.ConfirmNewPassword" class="text-danger"></span>
+                            <label asp-for="ConfirmNewPassword"><b>Confirm New Password</b></label>
+                            <input asp-for="ConfirmNewPassword" type="password" placeholder="Confirm new password" name="ConfirmNewPassword">
+                            <span asp-validation-for="ConfirmNewPassword" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="acountbutton">
@@ -51,14 +88,12 @@
                     <label for="checkbox">I agree to the <a href="#">Terms</a> & <a href="#">Conditions</a></label>
                 </div>
             </div>
-            <div >
+            <div>
                 <button class="btn-delete">Delete</button>
             </div>
-            
-            
+
+
         </div>
     </div>
 
-</section>
-
-
+</section> 

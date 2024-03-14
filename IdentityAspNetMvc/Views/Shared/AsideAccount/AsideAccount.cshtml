@@ -1,8 +1,6 @@
 ﻿@model AccountDetailsViewModel
-
-
 @{
-    ViewData["Title"] = $"{@Model.ProfileInfo.FirstName} {@Model.ProfileInfo.LastName}";
+    // ViewData["Title"] = $"{@Model.ProfileInfo.FirstName} {@Model.ProfileInfo.LastName}";
 }
 <link rel="stylesheet" href="~/css/AccountDetails.css" asp-append-version="true" />
 
@@ -24,10 +22,11 @@
                 <img src="~/Images/bx-cog.svg" alt="">
                 <span class="btn-text">Account Details</span>
             </a>
+
         <a class="btn-trans" asp-controller="Security" asp-action="Security">
                 <img src="~/Images/bx-lock-alt.svg" alt="">
                 <span class="btn-text">Security</span>
-            </a>
+            </a> 
             <a class="btn-trans" asp-controller="SavedCourses" asp-action="Courses">
                 <img class="bookmark" src="~/Images/savedcourse.svg" alt="">
                 <span class="btn-text">Saved Courses</span>
