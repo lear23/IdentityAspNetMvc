@@ -80,7 +80,41 @@
             </div>
 
             <hr>
-            <div class="address">
+            <form asp-action="Delete" asp-controller="Security" method="post">
+                <div class="address">
+                    <h5 class="colorTitle">Delete account</h5>
+                    <p class="text-m">When you delete your account, your public profile will be deactivated immediately. If you change your mind before the 14 days are up, sign in with your email and password, and we’ll send you a link to reactivate your account.</p>
+
+                    <div class="securityCheck">
+                        <input type="checkbox" id="agreeCheckbox" name="agreeCheckbox">
+                        <label for="agreeCheckbox">I agree to the <a href="#">Terms</a> & <a href="#">Conditions</a></label>
+                        <button type="submit" class="btn-delete">Delete</button>
+                    </div>
+                </div>
+            </form>
+
+           @*  <form asp-action="Delete" asp-controller="Security" method="post">
+                <div class="address">
+                    <h5 class="colorTitle">Delete account</h5>
+                    <p class="text-m">When you delete your account, your public profile will be deactivated immediately. If you change your mind before the 14 days are up, sign in with your email and password, and we’ll send you a link to reactivate your account.</p>
+
+                    <div class="securityCheck">
+                        <input type="checkbox" id="agreeCheckbox" name="agreeCheckbox">
+                        <label for="agreeCheckbox">I agree to the <a href="#">Terms</a> & <a href="#">Conditions</a></label>
+                        <button type="submit" class="btn-delete">Delete</button>
+                    </div>
+                </div>
+            </form> *@
+            
+        </div>
+    </div>
+   
+</section>
+
+
+
+
+@*    <div class="address">
                 <h5 class="colorTitle">Delete account</h5>
                 <p class="text-m">When you delete your account, your public profile will be deactivated immediately. If you change your mind before the 14 days are up, sign in with your email and password, and we’ll send you a link to reactivate your account.</p>
                 <div class="securityCheck">
@@ -90,10 +124,4 @@
             </div>
             <div>
                 <button class="btn-delete">Delete</button>
-            </div>
-
-
-        </div>
-    </div>
-
-</section> 
+            </div> *@

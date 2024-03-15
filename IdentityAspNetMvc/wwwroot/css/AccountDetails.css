@@ -218,7 +218,12 @@ form span{
     width: 100%;
     gap: 30px;
 }
-
-    .postalcode input {
+    
+@media(max-width:576px) {
+    .postalcode{
+        flex-direction:column;
         width: 100%;
     }
+}
+
+   

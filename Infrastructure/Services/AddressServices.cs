@@ -36,4 +36,16 @@ public class AddressServices(AppDbContext context)
         return false;   
     }
 
+    public async Task<bool> DeleteAddressAsync(string userId)
+    {
+        var addressEntity = await _context.Addresses.FirstOrDefaultAsync(x => x.UserId == userId);
+        if (addressEntity != null)
+        {
+            _context.Addresses.Remove(addressEntity);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        return false;
+    }
+
 }

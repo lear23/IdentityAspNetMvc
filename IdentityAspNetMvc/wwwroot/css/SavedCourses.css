@@ -6,12 +6,25 @@
     padding-bottom: 80px;
     gap: 80px;
 }
-
+@media(max-width:1200px) {
+    .container .saved {
+        flex-direction:column;
+        padding: 20px 40px;
+    }
+    
+}
 
 .deleteAll {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+@media(max-width:572px) {
+    .deleteAll {
+       flex-direction:column;
+       gap:30px;
+       text-align:center;
+    }
 }
 
 .chosen-courses {
@@ -19,6 +32,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr)); 
     justify-content: center;
     gap: 30px;
+}
+@media(max-width:972px) {
+    .chosen-courses {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        justify-content: center;
+    }
 }
 
 .courses-cards {

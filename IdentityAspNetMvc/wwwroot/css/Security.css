@@ -44,7 +44,7 @@
     gap: 20px;
 }
 
-@media (max-width:792px) {
+@media (max-width:972px) {
     .clientInfo {
         display: flex;
         flex-direction: column;

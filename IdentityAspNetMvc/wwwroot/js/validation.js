@@ -95,3 +95,43 @@ inputs.forEach(input => {
         }
     }
 })
+
+
+
+//const formErrorMessage = (element, validationResult) => {
+//    let spanElement = document.querySelector(`[data-valmsg-for="${element.name}"]`);
+
+//    if (validationResult) {
+//        element.classList.remove('input-validation-error');
+//        spanElement.classList.remove('field-validation-error');
+//        spanElement.classList.add('field-validation-valid');
+//        spanElement.innerHTML = "";
+//    } else {
+//        element.classList.add('input-validation-error');
+//        spanElement.classList.add('field-validation-error');
+//        spanElement.classList.remove('field-validation-valid');
+//        spanElement.innerHTML = element.dataset.valRequired;
+//    }
+//};
+
+//const checkBoxValidator = (element) => {
+//    if (element.checked) {
+//        formErrorMessage(element, true);
+//    } else {
+//        formErrorMessage(element, false);
+//    }
+//};
+
+
+//let forms = document.querySelectorAll('form');
+//let inputs = forms[0].querySelectorAll('input');
+
+//inputs.forEach(input => {
+//    if (input.dataset.val === 'true') {
+//        if (input.type === 'checkbox') {
+//            input.addEventListener('change', (e) => {
+//                checkBoxValidator(e.target);
+//            });
+//        }
+//    }
+//});
