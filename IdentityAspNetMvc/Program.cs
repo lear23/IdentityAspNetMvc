@@ -18,13 +18,7 @@ builder.Services.AddDefaultIdentity<UserEntity>(x =>
     x.Password.RequiredLength = 8;
 }).AddEntityFrameworkStores<AppDbContext>();
 
-//builder.Services.AddIdentity<UserEntity, IdentityRole>(options =>
-//{
-//    options.User.RequireUniqueEmail = true;
-//    options.SignIn.RequireConfirmedEmail = false;
-//    options.Password.RequiredLength = 8;
-//})
-//.AddEntityFrameworkStores<AppDbContext>();
+
 //-------------------------------------------
 
 
@@ -55,18 +49,6 @@ builder.Services.AddAuthentication()
         options.ClientId = "377115093634-c3cj5pfqgjf9r25hn4k1afoq5e60vjut.apps.googleusercontent.com";
         options.ClientSecret = "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";
     });
-
-
-
-//builder.Services.AddAuthentication().AddFacebook(x =>
-//{
-//    x.AppId = "296787203435897";
-//    x.AppSecret = "244f04473c4dd6487454ad7c8e5c46d9";
-//    x.Fields.Add("first_name");
-//    x.Fields.Add("last_name");
-
-
-//});
 
 
 
