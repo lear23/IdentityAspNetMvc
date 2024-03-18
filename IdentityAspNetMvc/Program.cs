@@ -46,8 +46,8 @@ builder.Services.AddAuthentication()
     })
     .AddGoogle(options =>
     {
-        options.ClientId = "377115093634-c3cj5pfqgjf9r25hn4k1afoq5e60vjut.apps.googleusercontent.com";
-        options.ClientSecret = "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";
+        options.ClientId = "";
+        options.ClientSecret = "";
     });
 
 
