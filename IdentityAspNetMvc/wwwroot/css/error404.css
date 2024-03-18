@@ -1,0 +1,14 @@
+﻿
+
+.error-404{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.error-404 .content {
+
+    text-align:center;
+
+}

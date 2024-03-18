@@ -14,7 +14,7 @@ namespace IdentityAspNetMvc.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Courses()
+        public async Task<IActionResult> SavedCourses()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)

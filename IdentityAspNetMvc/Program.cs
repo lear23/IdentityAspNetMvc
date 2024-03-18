@@ -41,11 +41,41 @@ builder.Services.ConfigureApplicationCookie(x =>
     x.SlidingExpiration = true;
 });
 
+
+builder.Services.AddAuthentication()
+    .AddFacebook(x =>
+    {
+        x.AppId = "296787203435897";
+        x.AppSecret = "244f04473c4dd6487454ad7c8e5c46d9";
+        x.Fields.Add("first_name");
+        x.Fields.Add("last_name");
+    })
+    .AddGoogle(options =>
+    {
+        options.ClientId = "377115093634-c3cj5pfqgjf9r25hn4k1afoq5e60vjut.apps.googleusercontent.com";
+        options.ClientSecret = "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";
+    });
+
+
+
+//builder.Services.AddAuthentication().AddFacebook(x =>
+//{
+//    x.AppId = "296787203435897";
+//    x.AppSecret = "244f04473c4dd6487454ad7c8e5c46d9";
+//    x.Fields.Add("first_name");
+//    x.Fields.Add("last_name");
+
+
+//});
+
+
+
+
 builder.Services.AddScoped<AddressServices>();
 
 var app = builder.Build();
 app.UseHsts();
-app.UseStatusCodePagesWithReExecute("/error", "?satusCode={0}");
+app.UseStatusCodePagesWithReExecute("/Home/Error404", "?satusCode={0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();

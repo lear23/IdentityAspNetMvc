@@ -1,0 +1,90 @@
+﻿@model AccountDetailsViewModel
+@{
+
+}
+
+<link rel="stylesheet" href="~/css/SavedCourses.css" asp-append-version="true" />
+
+<main class="container">
+    <section class="saved">
+        <partial name="~/Views/Shared/AsideAccount/AsideAccount.cshtml" />
+
+        <div class="infoDetails">
+            <div class="deleteAll">
+                <h2>Saved Items</h2>
+                <button class="btn-delete"><img src="images/dust-bin.svg" alt="">Delete all</button>
+            </div>
+
+            <div class="chosen-courses">
+                <div class="courses-cards">
+                    <img class="cardImage" src="~/Images/image (7).svg" alt="">
+                    <a href="">
+                        <img class="courseIcon" src="~/Images/S.svg" alt="">
+                    </a>
+                    <div class="cardText">
+                        <h5>Blender Character Creator v2.0 for Video Games Design</h5>
+                        <p class="text-s">By Ralph Edwards</p>
+                        <span class="blue">$18.99</span>
+                        <hr>
+                        <div class="watch">
+                            <div class="hours">
+                                <p class="text-s"><img src="images/bx-time-five.svg" alt="">160 hours</p>
+                            </div>
+                            <div class="likes">
+                                <p class="text-s"><img src="images/like.svg" alt=""> 92%(3.1K)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="courses-cards">
+                    <img class="cardImage" src="~/Images/image (1).svg" alt="">
+                    <a href="">
+                        <img class="courseIcon" src="~/Images/S.svg" alt="">
+                    </a>
+                    <div class="cardText">
+                        <h5>Fullstack Web Developer Course from Scratch</h5>
+                        <p class="text-s">By Robert Fox</p>
+                        <span class="blue">$12.50</span>
+                        <hr>
+
+                        <div class="watch">
+                            <div class="hours">
+                                <p class="text-s"><img src="images/bx-time-five.svg" alt="">160 hours</p>
+                            </div>
+                            <div class="likes">
+                                <p class="text-s"><img src="images/like.svg" alt=""> 92%(3.1K)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courses-cards">
+
+                    <img class="cardImage" src="~/Images/image (9).svg" alt="">
+                    <a href="/singlePage">
+                        <img class="courseIcon" src="~/Images/S.svg" alt="">
+                    </a>
+                    <div class="cardText">
+                        <h5>Learn JMETER from Scratch on Live Apps-Performance Testing</h5>
+                        <p class="text-s">By Jenny Wilson</p>
+                        <span class="blue">$14.50</span>
+                        <hr>
+                        <div class="watch">
+                            <div class="hours">
+                                <p class="text-s"><img src="images/bx-time-five.svg" alt="">160 hours</p>
+                            </div>
+                            <div class="likes">
+                                <p class="text-s"><img src="images/like.svg" alt=""> 92%(3.1K)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+

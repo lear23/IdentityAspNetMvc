@@ -24,8 +24,7 @@
     gap: 30px;
     border-right: 1px solid #d9d9d9;
 }
-
-@media(max-width: 792px) {
+@media(max-width: 992px) {
     .profile {
         border-right: none;
         border-bottom: 1px solid #d9d9d9;
@@ -35,6 +34,8 @@
         margin-right: 0;
     }
 }
+
+
 .min-profil, a{
     padding-left:12px;
 }
@@ -46,7 +47,7 @@
     gap: 10px;
 }
 
-@media(max-width:792px) {
+@media(max-width:992px) {
     .profile .controllers {
         display: flex;
         flex-direction:row;
@@ -83,7 +84,7 @@
 }
 
 
-@media only screen and (max-width: 972px) {
+@media only screen and (max-width: 992px) {
     .controllers .btn-trans {
         display: inline-flex; 
         align-items: center;
