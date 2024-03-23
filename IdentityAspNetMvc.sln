@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityAspNetMvc", "IdentityAspNetMvc\IdentityAspNetMvc.csproj", "{6053F35D-0171-4AB0-9B2B-FCD64BC12BF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C5353883-56A4-4CE8-BCCC-5A5E0451E9C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C5353883-56A4-4CE8-BCCC-5A5E0451E9C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{4ECB82C8-7531-4F6F-A0B5-6EAD52FC7582}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C5353883-56A4-4CE8-BCCC-5A5E0451E9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5353883-56A4-4CE8-BCCC-5A5E0451E9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5353883-56A4-4CE8-BCCC-5A5E0451E9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ECB82C8-7531-4F6F-A0B5-6EAD52FC7582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECB82C8-7531-4F6F-A0B5-6EAD52FC7582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECB82C8-7531-4F6F-A0B5-6EAD52FC7582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECB82C8-7531-4F6F-A0B5-6EAD52FC7582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
