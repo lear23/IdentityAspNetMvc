@@ -411,3 +411,23 @@ a {
 .gray {
     color: rgb(215, 215, 215);
 }
+
+.alerts {
+    padding: 20px 0;
+    margin-left: 250px;
+}
+
+    .alerts .alert-error {
+        background-color: #F06051;
+        padding: 8px 12px;
+        border-radius: 8px;
+        color: white;
+        margin: 0;
+    }
+
+.alert-success {
+    background-color: #8569F0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: White;
+}
