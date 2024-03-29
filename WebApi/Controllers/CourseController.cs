@@ -4,11 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using WebApi.Contexts;
 using WebApi.Dtos;
 using WebApi.Entities;
+using WebApi.Filters;
 
 namespace WebApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[UseApiKey]
 public class CourseController(Datacontext context) : ControllerBase
 {
 
