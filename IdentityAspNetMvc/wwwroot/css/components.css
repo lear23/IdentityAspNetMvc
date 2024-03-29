@@ -431,3 +431,33 @@ a {
     border-radius: 8px;
     color: White;
 }
+
+
+.cookiealert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #BDC7DE;
+    color: #090909;
+    padding: 12px 20px;
+    border-radius: 20px;
+}
+
+.topcookie {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+    .topcookie span {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .topcookie button {
+        display: inline-flex;
+        align-self: center;
+    }

@@ -1,5 +1,11 @@
 ﻿@inject SignInManager<UserEntity> _signInManager
 
+@{
+    var themeMode = Context.Request.Cookies["ThemeMode"] ?? "Light";
+    var isDark = (themeMode == "dark") ? true : false;
+
+}
+
 @if (_signInManager.IsSignedIn(User))
 {
     <header>
@@ -13,14 +19,14 @@
                 </nav>
             </div>
 
-            <div class="btn-switch">
+           @*  <div class="btn-switch">
                 <label>Light</label>
                 <label for="switch-mode" class="switch">
                     <input type="checkbox" id="switch-mode" />
                     <div class="slider round"></div>
                 </label>
                 <label>Dark</label>
-            </div>
+            </div> *@
             <a href="/account/details">
                 <img src="~/Images/avatarimage.svg" alt="Go to account details">
             </a>
@@ -52,10 +58,10 @@ else
                 </nav>
             </div>
 
-            <div class="btn-switch">
+            <div id="theme-switch" class="btn-switch">
                 <label>Light</label>
-                <label for="switch-mode" class="switch">
-                    <input type="checkbox" id="switch-mode" />
+                <label class="switch" for="switch-mode">
+                    <input type="checkbox" id="switch-mode" checked="@isDark" />
                     <span class="slider round"></span>
                 </label>
                 <label>Dark</label>

@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var themeMode = Context.Request.Cookies["ThemeMode"] ?? "Light";
+    var isDark = (themeMode == "dark") ? true : false;
+
+}
+
+<!DOCTYPE html>
 <html lang="sv-se">
 
 
@@ -11,18 +17,17 @@
     <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/headerAndfooter.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />
-  
-    <title>@ViewData["Title"] - Silicon</title>
 
-   @*  @if(ViewBag.Theme == "dark")
+    @if (themeMode == "dark")
     {
         <link rel="stylesheet" href="~/css/dark.css" asp-append-version="true" />
     }
     else
     {
-        <link rel="stylesheet" href="~/css/light.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />
     }
- *@
+
+    <title>@ViewData["Title"] - Silicon</title>
 
 </head>
 <body>
@@ -42,7 +47,6 @@
   
     <script src="~/js/site.js" asp-append-version="true"></script>  
     @await Html.PartialAsync("_validationScriptPartial")
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <partial name="_CookieConsent.cshtml" />
 </body>
 </html>

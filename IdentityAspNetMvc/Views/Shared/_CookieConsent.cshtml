@@ -1,0 +1,23 @@
+﻿
+@if (Context.Request.Cookies["CookieConsent"] == null)
+{
+    <div id="cookieConsent" class="alert-error topcookie">
+        <div class="container cookiealert">
+            <span>This website uses cookies to ensure you get the best experience on our website. By continuing to browse the site, you agree to our use of cookies.</span>
+            <button class="btn-delete" onclick="acceptCookieConsent()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function acceptCookieConsent() {
+            document.getElementById('cookieConsent').style.display = 'none';
+
+            fetch('@Url.Action("CookieConsent", "SiteSettings")', {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+        }
+    </script>
+}

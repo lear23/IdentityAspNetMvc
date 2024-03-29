@@ -1,0 +1,132 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+html, body {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    background-color: #0B0F19;
+    }
+
+.text-xs, .text-s, .text-m, .text-lg, .text-xl, .text-lead, .d1, .d2, .d3, .d4, .d5, .d6, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #cfd2e3;
+    font-family: "Manrope", sans-serif;
+}
+
+.text-xs {
+    font-size: 12px;
+}
+
+.text-s {
+    font-size: 14px;
+}
+
+.text-m {
+    font-size: 16px;
+}
+
+.text-lg {
+    font-size: 18px;
+}
+
+.text-xl {
+    font-size: 20px;
+}
+
+.text-lead {
+    font-size: 24px;
+}
+
+.d1 {
+    font-size: 80px;
+}
+
+.d2 {
+    font-size: 72px;
+}
+
+.d3 {
+    font-size: 64px;
+}
+
+.d4 {
+    font-size: 56px;
+}
+
+.d5 {
+    font-size: 48px;
+}
+
+.d6 {
+    font-size: 42px;
+}
+
+h1, .h1 {
+    font-size: 40px;
+}
+
+h2, .h2 {
+    font-size: 32px;
+}
+
+h3, .h3 {
+    font-size: 28px;
+}
+
+h4, .h4 {
+    font-size: 24px;
+}
+
+h5, .h5 {
+    font-size: 20px;
+}
+
+h6, .h6 {
+    font-size: 16px;
+}
+
+/*------ WRAPPER ----------*/
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/*------ LINK ----------*/
+a {
+    line-height: 160%;
+    font-weight: 400;
+    color: #cfd2e3;
+    font-family: "Manrope", sans-serif;
+    color: #babde8;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+/*------ MENU LINK ----------*/
+.menu-link {
+    line-height: 160%;
+    font-weight: 400;
+    color: #cfd2e3;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    color: #a7aae3;
+    font-weight: 600 !important;
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+}
+
+    .menu-link:hover, .menu-link:active, .menu-link:focus, .menu-link .active {
+        color: #babde8;
+        text-decoration: none;
+    }
