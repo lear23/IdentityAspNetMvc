@@ -1,0 +1,193 @@
+﻿@model CourseViewModel
+
+
+@{
+    ViewData["Title"] = "Course";
+}   
+<link rel="stylesheet" href="~/css/SingleCourse.css" asp-append-version="true" />
+
+<section class="courseImage" style="background-image: url('~/wwwroot/Images/@Model.Courses.FirstOrDefault()?.ImageName')">
+
+        <div class="container">
+            <div class="line1">
+           
+                <img src="~/Images/homeIcon.svg" alt="">
+                <span class="text-s">Home</span>
+                <img src="~/Images/rightArrow.svg" alt="">
+                <span class="text-s">Courses</span>
+                <img src="~/Images/rightArrow.svg" alt="">
+            <span class="text-s">@Model.Courses.FirstOrDefault()?.Title</span>
+            </div>
+            <div class="buttons">
+                <a><span class="text-s">Best Seller</span></a>
+                <a><span class="text-s">Digital</span></a>
+            </div>
+            <div class="fullstack">
+          
+            <h1>@Model.Courses.FirstOrDefault()?.Title</h1>
+
+                <p>Egestas feugiat lorem eu neque suspendisse ullamcorper scelerisque aliquam mauris.</p>
+                <img src="~/Images/meta.svg" alt="">
+               @*  <img src="images/meta.svg" alt=""> *@
+            </div>
+            <div class="Albert">
+                <img src="~/Images/albert.svg" alt="">
+                <div class="span">
+                    <p>Created by</p>
+                <span class="text-s">@Model.Courses.FirstOrDefault()?.Author</span>
+                </div>
+
+            </div>
+        </div>
+    
+
+    </section>
+
+    <!-- --------Course Description ------- -->
+
+    <section class="coursedescription container">
+        <div class="learn">
+            <h1>Course Description</h1>
+            <p>
+                Suspendisse natoque sagittis, consequat turpis. Sed tristique tellus morbi magna. At vel senectus
+                accumsan, arcu mattis id tempor. Tellus sagittis, euismod porttitor sed tortor est id. Feugiat
+                velit velit, tortor ut. Ut libero cursus nibh lorem urna amet tristique leo. Viverra lorem arcu
+                nam nunc at ipsum quam. A proin id sagittis dignissim mauris condimentum ornare. Tempus mauris
+                sed dictum ultrices.
+            </p>
+
+            <h2>What you'll learn</h2>
+
+        <p> <img src="~/Images/bx-check-circle.svg" alt="">Sed lectus donec amet eu turpis interdum.</p>
+
+        <p><img src="~/Images/bx-check-circle.svg" alt=""> Nulla at consectetur vitae dignissim porttitor.</p>
+
+        <p><img src="~/Images/bx-check-circle.svg" alt="">Phasellus id vitae dui aliquet mi.</p>
+
+        <p><img src="~/Images/bx-check-circle.svg" alt=""> Integer cursus vitae, odio feugiat iaculis aliquetdiam, et purus. </p>
+
+        <p> <img src="~/Images/bx-check-circle.svg" alt=""> In aenean dolor diam tortor orci eu.</p>
+
+        </div>
+        <div class="courseIncludes">
+            <div class="includes">
+                <h4>This course includes:</h4>
+                <div class="box-course">
+                    <img src="~/Images/bx-slideshow.svg" alt="">
+                        <p>148 hours on-demand video</p>
+                 </div>
+                <div class="box-course">
+                   
+                    <img src="~/Images/bx-file.svg" alt="">
+                        <p>18 articles</p>
+                 </div>
+                <div class="box-course">
+                   
+                    <img src="~/Images/bx-infinite.svg" alt="">
+                        <p>148 hours on-demand video</p>
+                 </div>
+                <div class="box-course">
+                    <img src="~/Images/bx-trophy.svg" alt="">
+                        <p>148 hours on-demand video</p>
+                 </div>
+                <div class="boxImg">
+                    <h3>$28.99 </h3>
+                    <img src="images/$49.00.svg" alt="">
+                <img src="~/Images/$49.00.svg" alt="">
+                </div>
+                <button class="btn-theme-s">Join course</button>
+
+            </div>
+        </div>
+
+    </section>
+    <section class="container">
+        <h1>Program Details</h1>
+        <div class="programdetails">
+            <div class="detailsBox">
+                <div class="programBox">
+                <img src="~/Images/1.svg" alt="">
+                    <h5>Introduction. Getting started</h5>
+                    <p>
+                        Nulla faucibus mauris pellentesque blandit faucibus non. Sit ut et at suspendisse gravida
+                        hendrerit tempus placerat.
+                    </p>
+                </div>
+                <div class="programBox">
+                <img src="~/Images/2.svg" alt="">
+                    <h5>The ultimate HTML developer: advanced HTML</h5>
+                    <p>
+                        Lobortis diam elit id nibh ultrices sed penatibus donec. Nibh iaculis eu sit cras
+                        ultricies. Nam eu eget etiam egestas donec scelerisque ut ac enim. Vitae ac nisl, enim
+                        nec accumsan vitae est.
+                    </p>
+
+                </div>
+                <div class="programBox">
+                <img src="~/Images/3.svg" alt="">
+                    <h5>CSS & CSS3: basic</h5>
+                    <p>
+                        Duis euismod enim, facilisis risus tellus pharetra lectus diam neque. Nec ultrices mi
+                        faucibus est. Magna ullamcorper potenti elementum ultricies auctor nec volutpat augue.
+                    </p>
+
+                </div>
+                <div class="programBox">
+                <img src="~/Images/4.svg" alt="">
+                    <h5>JavaScript basics for beginners</h5>
+                    <p>
+                        Morbi porttitor risus imperdiet a, nisl mattis. Amet, faucibus eget in platea vitae,
+                        velit, erat eget velit. At lacus ut proin erat.
+                    </p>
+
+                </div>
+                <div class="programBox">
+                <img src="~/Images/5.svg" alt="">
+                    <h5>Understanding APIs</h5>
+                    <p>
+                        Risus morbi euismod in congue scelerisque fusce pellentesque diam consequat. Nisi mauris
+                        nibh sed est morbi amet arcu urna. Malesuada feugiat quisque consectetur elementum diam
+                        vitae. Dictumst facilisis odio eu quis maecenas risus odio fames bibendum.
+                    </p>
+
+                </div>
+                <div class="programBox">
+                <img src="~/Images/6.svg" alt="">
+                    <h5>C# and .NET from beginner to advanced</h5>
+                    <p>
+                        Quis risus quisque diam diam. Volutpat neque eget eu faucibus sed urna fermentum risus.
+                        Est, mauris morbi nibh massa.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="container">
+        <div class="albertFlores">
+        <img src="~/Images/imageAlbert.svg" alt="">
+          
+            <div class="albertText">
+                <p>Learn from the best</p>
+                <h2>Albert Flores</h2>
+                <span>
+                    Dolor ipsum amet cursus quisque porta adipiscing. Lorem convallis malesuada sed maecenas.
+                    Ac
+                    dui at vitae mauris cursus in nullam porta sem. Quis pellentesque elementum ac bibendum.
+                    Nunc
+                    aliquam in tortor facilisis. Vulputate eget risus, metus phasellus. Pellentesque faucibus
+                    amet,
+                    eleifend diam quam condimentum convallis ultricies placerat. Duis habitasse placerat amet,
+                    odio
+                    pellentesque rhoncus, feugiat at. Eget pellentesque tristique felis magna fringilla.
+                </span>
+                <div class="albertButtons">
+                    <a class="btn-theme" href="">240k subscribers</a>
+                    <a class="btn-theme" href="#">180k followers</a>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+

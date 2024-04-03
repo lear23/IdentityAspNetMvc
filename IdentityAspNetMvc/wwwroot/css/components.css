@@ -409,8 +409,28 @@ a {
 }
 
 .gray {
+    position: relative;
     color: rgb(215, 215, 215);
+    margin-left: 5px;
 }
+
+    .gray::before,
+    .gray::after {
+        content: '';
+        position: absolute;
+        bottom: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(215, 215, 215);
+    }
+
+    .gray::before {
+        left: 0;
+    }
+
+    .gray::after {
+        right: 0;
+    }
 
 .alerts {
     padding: 20px 0;

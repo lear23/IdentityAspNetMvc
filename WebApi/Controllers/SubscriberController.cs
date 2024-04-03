@@ -10,6 +10,7 @@ namespace WebApi.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 [UseApiKey]
+
 public class SubscriberController(Datacontext context) : ControllerBase
 {
     private readonly Datacontext _context = context;

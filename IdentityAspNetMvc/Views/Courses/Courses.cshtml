@@ -30,12 +30,14 @@
         <div class="container-cards">
             @foreach(var item in Model.Courses)
             {
-                <div class="cardCourses">
+           
+                <a class="cardCourses" href="@Url.Action("SingleCourse", "SingleCourse", new { courseId = item.Id })">
                     @if(item.IsBestSeller)
                     {
                         <img class="bestSeller" src="~/Images/badge.png" alt="">
                     
                      }
+                     
                     <img class="cardImage" src="~/Images/@item.ImageName" alt="">
                     <img class="courseIcon" src="~/Images/S.svg" alt="">                    
                     
@@ -44,8 +46,9 @@
                         <p class="text-s">@item.Author</p>
                         @if (@item.Discount > 0)
                         {
-                            <span class="red">$ @item.Price</span>
-                            <img class="cardImage" src="~/Images/old (1).svg" alt="">
+                            <span class="red">$ @item.Price </span>
+                            <span class="gray">$ @item.Discount </span>
+                            
 
                         }
                         else
@@ -61,12 +64,12 @@
                             </div>
                             <div class="likes">
                                 <img src="~/Images/like.svg" alt="">
-                                <span>@($"{item.LikesNumbers * 100:0}%")</span>
-                                <span class="text-s">(@($"{item.LikesProcent / 1000 }k"))</span>                                                                     
+                                <span>@($"{item.LikesNumbers}%")</span>
+                                <span class="text-s">(@($"{item.LikesProcent}k"))</span>                                                                     
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             }          
             
         </div>
