@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace IdentityAspNetMvc.Controllers;
 
-//[Authorize]
+[Authorize]
 
 public class CoursesController(HttpClient httpClient) : Controller
 {

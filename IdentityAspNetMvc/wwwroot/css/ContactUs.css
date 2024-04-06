@@ -1,4 +1,4 @@
-﻿body {
+﻿body #contact{
     background-color: #F3F6FF;
 }
 
@@ -110,14 +110,7 @@ main {
     border: 2px solid rgb(238, 238, 238);
     padding: 10px;
     margin-bottom: 20px;
-    /* line-height: 160%;
-    font-weight: 400;
-    color: #565973;
-    font-family: "Manrope", sans-serif;
-    color: #6366F1;
-    text-decoration: none;
-    transition: all 0.25s ease-in-out;
-    width: 400px; */
+   
 }
 
 .dropdown {

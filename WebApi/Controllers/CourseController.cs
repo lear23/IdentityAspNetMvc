@@ -11,7 +11,8 @@ namespace WebApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-//[UseApiKey]
+[UseApiKey]
+[Authorize]
 
 public class CourseController(Datacontext context) : ControllerBase
 {

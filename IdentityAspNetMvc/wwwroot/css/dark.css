@@ -130,3 +130,39 @@ a {
         color: #babde8;
         text-decoration: none;
     }
+
+
+/*------------------- Features----------*/
+#features {
+    background-color: #090909;
+    padding: 80px;
+}
+.box:hover {
+    background-color: #FFFFFF;
+    color:#090909;
+}
+/*------ LAPTOP----------*/
+
+.laptop-image {
+   /* background: linear-gradient(to right, rgb(0, 0, 0) 50%, rgb(252, 251, 251) 50%);*/
+    background-color:#090909;
+    padding: 60px;
+}
+/*------ DOWNLOAD----------*/
+.download {
+    background-color: #090909;
+    padding: 60px;
+}
+
+
+/*------ DON´T WANT TO MISS ANNYTHING----------*/
+
+.anything {
+    background-color: #090909;
+    padding: 90px;
+}
+
+
+body #contact {
+    background-color: #090909;
+}
